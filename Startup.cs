@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -10,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Microsoft.EntityFrameworkCore;
+using API_FinancialManager_Core.Data;
 
 namespace API_FinancialManager_Core
 {
@@ -26,6 +28,9 @@ namespace API_FinancialManager_Core
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            services.AddDbContext<API_DbContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("API_DbContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
