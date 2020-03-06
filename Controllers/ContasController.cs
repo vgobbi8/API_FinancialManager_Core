@@ -25,6 +25,7 @@ namespace API_FinancialManager_Core.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Conta>>> GetConta()
         {
+            
             return await _context.FIN001_Conta.ToListAsync();
         }
 
@@ -33,7 +34,7 @@ namespace API_FinancialManager_Core.Controllers
         public async Task<ActionResult<Conta>> GetConta(long id)
         {
             var conta = await _context.FIN001_Conta.FindAsync(id);
-
+            conta.ListaMovimentos = await _context.MOV001_Movimento.Where(m => m.ContaId == id).ToListAsync();
             if (conta == null)
             {
                 return NotFound();

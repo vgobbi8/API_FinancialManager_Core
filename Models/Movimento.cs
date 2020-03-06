@@ -8,16 +8,16 @@ namespace API_FinancialManager_Core.Models
     public class Movimento
     {
         public long Id { get; set; }
-        public long IdConta { get; set; }
+        public long ContaId { get; set; }
         public string Descricao { get; set; }
-        public double Valor { get; set; }
+        public decimal Valor { get; set; }
 
 
         public void teste()
         {
             //int a = this.Codigo;
             string b = this.Descricao;
-            double d = this.Valor;
+          //  double d = this.Valor;
             //Enums.TiposMovimento c = this.TipoMovimento;
             //DateTime e = this.DataMovimento;
         
