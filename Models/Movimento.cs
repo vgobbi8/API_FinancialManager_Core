@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API_FinancialManager_Core.Utils;
 
 namespace API_FinancialManager_Core.Models
 {
@@ -10,7 +11,9 @@ namespace API_FinancialManager_Core.Models
         public long Id { get; set; }
         public long ContaId { get; set; }
         public string Descricao { get; set; }
-        public decimal Valor { get; set; }
+        public decimal Valor { get; set; } 
+        public DateTime DataMovimento { get; set; }
+        public EnumTypes.TipoDeMovimento TipoDeMovimento { get; set; }
 
 
         public void teste()

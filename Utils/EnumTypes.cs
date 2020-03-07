@@ -12,5 +12,11 @@ namespace API_FinancialManager_Core.Utils
             Corrente = 0,
             Poupanca = 1
         }
+
+        public enum TipoDeMovimento
+        {
+            Entrada = 0,
+            Saida = 1
+        }
     }
 }
